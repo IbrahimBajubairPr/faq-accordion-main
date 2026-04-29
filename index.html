@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <!-- <link rel="stylesheet" href="assets/fonts/WorkSans-Italic-VariableFont_wght.ttf">
@@ -11,116 +13,128 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-    *{
+    .attribution {
+      font-size: 0.6875rem;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     @font-face {
       font-family: 'WorkSans';
-      src: url('/assets/fonts/WorkSans-VariableFont_wght.ttf')
-      format('turetype');
+      src: url('/assets/fonts/WorkSans-VariableFont_wght.ttf') format('turetype');
       font-size: normal;
-      font-weight:100 900;
+      font-weight: 100 900;
 
     }
-      @font-face {
+
+    @font-face {
       font-family: 'WorkSans';
-      src: url('/assets/fonts/WorkSans-Italic-VariableFont_wght.ttf')
-      format('turetype');
+      src: url('/assets/fonts/WorkSans-Italic-VariableFont_wght.ttf') format('turetype');
       font-size: normal;
-      font-weight:normal;
+      font-weight: normal;
 
     }
-    body{
+
+    body {
       background: url("assets/images/background-pattern-desktop.svg") no-repeat;
       background-size: contain;
       width: 100vw;
-      height:100vh;
+      min-height: 100vh;
       background-color: hsla(293, 65%, 48%, 0.196);
-      font-family: 'WorkSans' , sans-serif;
+      font-family: 'WorkSans', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
       flex-direction: column;
     }
-    .container{
-      max-width:530px;
+
+    .container {
+      max-width: 530px;
       margin: 100px 20px;
       background-color: #fff;
       border-radius: 10px;
       padding: 30px 30px 10px 30px;
     }
-    .title{
+
+    .title {
       display: flex;
       align-items: center;
       margin-bottom: 30px;
     }
-    .title h1{
+
+    .title h1 {
       margin-left: 10px;
     }
-    .title img{
+
+    .title img {
       width: 30px;
-    } 
-    .subtitle{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 25px ;
     }
-    .subtitle p{
-      font-size: 18px;
-      font-weight: 600;
-    }
-    .info{
-      margin-bottom: 20px;
-    }
-    .info p {
-      color:#aaa; 
-      font-weight: 400;
-      line-height: 25px;
-    }
-    .questions .question{
-      display: flex;
-      justify-content: space-between;
+
+    .questions .question {
+      display: grid;
       align-items: center;
       padding: 20px 0;
-      border-top:1px solid #eee;
+      border-top: 1px solid #eee;
+      grid-template-columns: 5fr 0fr;
+      gap: 0 18px;
     }
-    .questions .question summary {
-      font-weight: 700;
+
+    .questions .first {
+      border-top: none;
     }
-    .questions .question summary:hover{
+
+    .questions .question .summary {
+      font-weight: 600;
+    }
+
+    .questions .question .summary:hover {
       color: rgb(221, 3, 221);
       cursor: pointer;
     }
-    footer{
-      /* position: fixed; */
+
+    .question img:hover {
+      cursor: pointer;
+    }
+
+    summary .answer {
+      font-size: 15px;
+      color: #999;
+      padding-top: 10px;
+      line-height: 20px;
+      display: none;
+      transition: all .5s ease-in-out;
+    }
+
+    footer {
       bottom: 0;
       margin-top: 20px 0;
-      padding: 20px 0 ;
+      padding: 20px;
       width: 100%;
       font-size: 18px;
       font-weight: 600;
-      /* background-color: #aaa; */
     }
-    @media  (max-width:540px) {
-      body{
+
+    @media (max-width:540px) {
+      body {
         background-image: url("assets/images/background-pattern-mobile.svg");
         background-position: no-repeat;
         background-size: contain;
       }
-      
+
     }
-
-
-
-    
   </style>
 </head>
+
 <body>
 
   <main class="container">
@@ -128,58 +142,83 @@
       <img src="assets/images/icon-star.svg" alt="star-icon">
       <h1>FAQs</h1>
     </div>
-    <div class="subtitle">
-      <p>What is Frontend Mentor, and how will it help me?</p>
-      <img src="assets/images/icon-minus.svg" alt="minus-icon">
-    </div>
-    <div class="info">
-      <p>Frontend Mentor offers realistic coding challenges to help developers improve their 
-  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-  all levels and ideal for portfolio building.</p>
-    </div>
+
     <div class="questions">
+      <div class="question first">
+        <summary>
+          <p class="summary">What is Frontend Mentor, and how will it help me?</p>
+          <p class="answer">Frontend Mentor offers realistic coding challenges to help developers improve their
+            frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for
+            all levels and ideal for portfolio building.</p>
+        </summary>
+        <img class="img" src="assets/images/icon-plus.svg" alt="plus-icon">
+      </div>
       <div class="question">
-        <summary>Is Frontend Mentor free?</summary>
-        <img src="assets/images/icon-plus.svg" alt="plus-icon">
+        <summary>
+          <p class="summary">Is Frontend Mentor free?</p>
+          <p class="answer">Yes, Frontend Mentor offers both free and premium coding challenges, with the free
+            option providing access to a range of projects suitable for all skill levels.</p>
+        </summary>
+        <img class="img" src="assets/images/icon-plus.svg" alt="plus-icon">
       </div>
-       <div class="question">
-        <summary>Can I use Frontend Mentor projects in my portfolio?</summary>
-        <img src="assets/images/icon-plus.svg" alt="plus-icon">
+      <div class="question">
+        <summary>
+          <p class="summary">Can I use Frontend Mentor projects in my portfolio?</p>
+          <p class="answer"> Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+            way to showcase your skills to potential employers!</p>
+        </summary>
+        <img class="img" src="assets/images/icon-plus.svg" alt="plus-icon">
       </div>
-       <div class="question">
-        <summary> How can I get help if I'm stuck on a challenge?</summary>
-        <img src="assets/images/icon-plus.svg" alt="plus-icon">
+      <div class="question">
+        <summary>
+          <p class="summary"> How can I get help if I'm stuck on a challenge?</p>
+          <p class="answer"> The best place to get help is inside Frontend Mentor's Discord community. There's a help
+            channel where you can ask questions and seek support from other community members.
+          </p>
+        </summary>
+        <img class="img" src="assets/images/icon-plus.svg" alt="plus-icon">
       </div>
     </div>
 
   </main>
-  <!-- FAQs
 
-  What is Frontend Mentor, and how will it help me?
 
-  Frontend Mentor offers realistic coding challenges to help developers improve their 
-  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-  all levels and ideal for portfolio building.
-
-  Is Frontend Mentor free?
-
-  Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
-  option providing access to a range of projects suitable for all skill levels.
-
-  Can I use Frontend Mentor projects in my portfolio?
-
-  Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
-  way to showcase your skills to potential employers!
-
-  How can I get help if I'm stuck on a Frontend Mentor challenge?
-  
-  The best place to get help is inside Frontend Mentor's Discord community. There's a help 
-  channel where you can ask questions and seek support from other community members. -->
-
-  
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="https://github.com/IbrahimBajubairPr">Ibrahim Zuhair Ba_jubair</a>.
   </footer>
+  <script>
+    let summaries = document.querySelectorAll(".summary");
+    let icons = document.querySelectorAll('.img');
+
+    summaries.forEach((item) => {
+      item.addEventListener('click', () => {
+        const answer = item.nextElementSibling;
+        // let icon = item.nextElementSibling;
+
+        if (answer.style.display === "none") {
+          answer.style.display = "block";
+          icon.src = "assets/images/icon-minus.svg";
+        } else {
+          answer.style.display = "none";
+          icon.src = "assets/images/icon-plus.svg";
+        }
+      })
+    })
+    icons.forEach((item) => {
+      item.addEventListener('click', () => {
+
+        const icon = item.nextElementSibling;
+
+        if (icon.src === "assets/images/icon-plus.svg") {
+          icon.src = "assets/images/icon-minus.svg";
+        } else {
+          icon.src = "assets/images/icon-plus.svg";
+        }
+      })
+    })
+
+  </script>
 </body>
+
 </html>
